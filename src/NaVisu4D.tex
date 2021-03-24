@@ -1,0 +1,127 @@
+% ----------------------------------------------------------------------------
+% File: NaVisu4D.tex
+% Usage:        Latex2e
+% Creation :  25 juin 2020 sergemorvan29@gmail.com
+% Revised:    24 décembre 2020 
+% Revised:   
+% ----------------------------------------------------------------------------
+\documentclass[12pt, a4paper]{book}
+% ----------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{moreverb}
+\usepackage{eurosym}
+\usepackage{index}
+\usepackage{amsfonts}
+\usepackage{graphics}
+\usepackage{listings}
+\usepackage{hyperref}
+%\usepackage{html}
+\usepackage{multimedia}
+\usepackage{pgfpages}
+\usepackage{pgf,xcolor,tikz}
+\usepackage{rotating}
+\usepackage{framed}
+\usepackage[framed,hyperref,standard]{ntheorem}
+\usepackage{fancyhdr,lastpage}
+\usepackage{fancyvrb}
+
+%-------------------------------------------------------------------------
+% --- Commandes --------------------------------------------------------------
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\renewcommand\contentsname{Table des mati\`eres}
+\def\ladate{mars 2021}
+\def\mot-cle#1{
+	{\noindent {\bf Mots-cl\'es} : #1\vspace{-.5em}\vspace{0pt}}
+	\def\mot-cle{\par}
+}
+
+\def\biblio#1{\subsection{R\'ef\'erences}\list
+	{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\usecounter{enumi}}
+	\def\newblock{\hskip .11em plus .33em minus .07em}
+	\sloppy\clubpenalty4000\widowpenalty4000
+	\sfcode`\.=1000\relax}
+\let\endbiblio=\endlist
+
+
+% --- Identification du document ---------------------------------------------
+\def\soustitre{\bf\sc Visualisation, simulation de données géoréférencées en 4D}
+\def\projet{\bf\sc NaVisu4D}
+\def\sousprojet{\bf\sc Dossier de utilisateur}
+\def\titre{\bf\sc NaVisu4D }
+\def\auteur{\sc{Serge}}
+\def\leclient{Projet Open Source}
+\def\lauteur{Lithops}
+\def\leverif{l}
+\def\chef{Serge}
+\def\lechef{sm}
+\def\laversion{0.2}
+\def\sujet{\sc Manuel utilisateur } 
+
+% --- Mise en page ------------------------------------------------------------
+\setlength{\textwidth}{17.5cm}
+\setlength{\textheight}{24.6cm}
+\headsep=2cm
+\footskip=1.5cm
+\hoffset=-2cm
+\voffset=-2.5cm
+%--------------------------------------------------------------------------
+% Changement de la syntaxe de la commande \chapter
+
+\makeatletter 
+
+%-------------------------------------------------------------------------
+\hypersetup{
+	bookmarks=true,         % show bookmarks bar?
+	unicode=false,          % non-Latin characters in Acrobats bookmarks
+	pdftoolbar=true,        % show Acrobats toolbar?
+	pdfmenubar=true,        % show Acrobats menu?
+	pdffitwindow=false,     % window fit to page when opened
+	pdfstartview={FitH},    % fits the width of the page to the window
+	pdftitle={My title},    % title
+	pdfauthor={Lithops},     % author
+	pdfsubject={NaVisu},   % subject of the document
+	pdfcreator={Lithops},   % creator of the document
+	pdfproducer={Producer}, % producer of the document
+	pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+	pdfnewwindow=true,      % links in new window
+	colorlinks=false,       % false: boxed links; true: colored links
+	linkcolor=red,          % color of internal links
+	citecolor=green,        % color of links to bibliography
+	filecolor=magenta,      % color of file links
+	urlcolor=cyan           % color of external links
+}
+
+%--------------------------------------------------------------------------
+\pgfdeclareimage[width=2cm,interpolate=true]{navisuLogo}{images/Logotv2020}
+
+\pagestyle{fancy}
+\fancyhead[LE,LO]{\pgfuseimage{navisuLogo}}
+\fancyhead[CE,CO]{\sc Visualisation, simulation de données géoréférencées en 4D }
+\fancyhead[RE,RO]{2021 -- \thepage/\pageref{LastPage}}
+\fancyfoot[LE,LO]{}
+\fancyfoot[CE,CO]{\pgfuseimage{footline-enib-adresse}}
+\fancyfoot[RE,RO]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+%--------------------------------------------------------------------------
+\cfoot{\includegraphics[width=18.5cm]{images/bas-page.png}}
+\rfoot{\raisebox{.3cm}{\textcolor{black}{\scriptsize{Version \laversion \ - 
+				\ladate}}}}
+
+%\SetWatermarkText{\sc Projet}
+%\SetWatermarkScale{4}
+\begin{document}
+	\input{body.tex}
+	 \tableofcontents
+	\label{fin}
+	
+	% ------------------------------------------------------------------------------
+\end{document}

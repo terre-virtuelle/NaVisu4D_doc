@@ -1,0 +1,104 @@
+%-------------------------------------------------------------------------
+% beamerthemeEnib.sty
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\RequirePackage{xcolor}
+\RequirePackage{colortbl,color}
+\RequirePackage{amsmath,amssymb,amsfonts}
+\RequirePackage{hyperref,multimedia,rotating,xmpmulti}
+\RequirePackage[french]{babel}
+\RequirePackage[latin1]{inputenc}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+%\pgfdeclareimage[width=2cm,interpolate=true]{logo-navisu}{logo-navisu}
+%\pgfdeclareimage[width=\paperwidth,interpolate=true]{footline}{footline}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\definecolor{blanc}{RGB}{255,255,255}
+\definecolor{orange}{RGB}{250,183,0}
+\definecolor{bleu}{RGB}{0,56,130}
+
+\setbeamercolor{titlelike}{fg=bleu,bg=orange}
+\setbeamercolor{normal text}{fg=bleu}
+\setbeamercolor{alerted text}{fg=orange}
+\setbeamercolor{background canvas}{bg=}
+\setbeamercolor{title in head/foot}{fg=bleu}
+\setbeamercolor{author in head/foot}{fg=bleu}
+\setbeamercolor{date in head/foot}{fg=bleu}
+\setbeamercolor{detail in head/foot}{fg=orange}
+\setbeamercolor{frametitle}{fg=bleu}
+\setbeamercolor{framesubtitle}{fg=bleu,bg=blanc}
+\setbeamercolor{block title}{fg=bleu,bg=orange}
+\setbeamercolor{block body}{fg=bleu,bg=blanc}
+\setbeamercolor{block title alerted}{fg=orange,bg=bleu}
+\setbeamercolor{block body alerted}{fg=bleu,bg=blanc}
+\setbeamercolor{block title example}{fg=green,bg=orange}
+\setbeamercolor{block body example}{fg=bleu,bg=blanc}
+\setbeamercolor{description item}{fg=bleu,bg=blanc}
+\setbeamercolor{item projected}{fg=bleu,bg=blanc}
+\setbeamercolor{item projected}{fg=orange,bg=bleu}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{description item}{series=\bfseries}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\setbeamersize{text margin left=0.75cm,text margin right=0.75cm}
+%\setbeamersize{description width of={longest label}}
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=true]
+
+\setbeamertemplate{frametitle}
+{
+\hfill
+\begin{minipage}{.75\paperwidth}
+\hfill\insertframetitle
+\end{minipage}
+
+\hfill
+\begin{minipage}{.75\paperwidth}
+\hfill\usebeamerfont{framesubtitle}\color{bleu}\insertframesubtitle
+\end{minipage}
+
+}
+ 
+\setbeamertemplate{footline}
+{%
+  %\leavevmode%
+% \pgfuseimage{footline}\\\vspace*{-.4cm}
+  \hbox{\bf
+   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+  \usebeamerfont{author in head/foot}\hspace*{1em}\insertshortinstitute
+ \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\hspace{1em}\insertframenumber{}/\inserttotalframenumber\hspace*{1em}
+  \end{beamercolorbox} 
+  }%
+  %\vskip0pt%
+}
+
+%-------------------------------------------------------------------------
+\mode<presentation>
+{
+\useinnertheme[shadow=true]{rounded}
+\setbeamertemplate{navigation symbols}{}
+}
+\mode<handout> 
+{
+\setbeamertemplate{note page}[plain]
+\setbeamertemplate{theorems}[normal font]
+\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+}
+%-------------------------------------------------------------------------
+
